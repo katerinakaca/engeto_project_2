@@ -24,28 +24,54 @@ def nahodne_cislo():
       return spravne_cislo
 
 #kontrola vstupu uživatele
-def kontrola_vstupu():
+def kontrola_vstupu(hadani):
       vyber = True
       while vyber:
             list_cisel = []
-            hadani = input("Enter a number: ")
             for n in hadani:
                   if not n.isnumeric():
                         print("Obsahuje špatné znaky.")
+                        break
                   elif hadani.count(n) > 1:
                         print("Číslice se nesmí opakovat.")
+                        break
                   else:
                         list_cisel.append(n)
             if list_cisel[0] == "0" or len(list_cisel) != 4:
                   print("Číslo nesmí začínat 0 a číslo musí být 4místné.")
-                  continue
+                  break
             else:
                   vyber = False
       return list_cisel
 
+#hra samotná
+def hra():
+      hra_bezi = True
+      while hra_bezi == True:
+            cislo = nahodne_cislo()
+            hadani = input("Zadej 4místné číslo: ")
+            spravne_hadani = kontrola_vstupu(hadani)
+            break
+      return spravne_hadani
+
+def porovnani_vstupu(cislo, spravne_hadani):
+      indexace_cisla = list(enumerate(cislo))
+      for i, cislice in enumerate(spravne_hadani):
+            dvojice = tuple([i, cislice])
+            print(dvojice)
 
 
 
 
 
-print(kontrola_vstupu())
+
+
+
+
+
+
+
+
+
+print(porovnani_vstupu(["1", "2", "3", "4"], ["1", "2", "3", "4"]))
+

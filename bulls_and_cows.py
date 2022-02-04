@@ -111,4 +111,5 @@ def tisk_poctu_bulls_and_cows(pocet_byku, pocet_krav):
 
 
 hra()
+print()
 

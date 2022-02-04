@@ -15,7 +15,6 @@ print(oddelovac)
 
 #hra samotná
 def hra():
-      hrac = input("NickName player: ")
       cas_zac = time.time()
       pokusy = 0
       oddelovac = "-" * 47
